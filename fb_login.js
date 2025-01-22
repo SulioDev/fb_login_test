@@ -2,10 +2,10 @@
 window.fbAsyncInit = function() {
     try {
         FB.init({
-            appId: '1075064627580974', // Replace with your Facebook App ID
+            appId: 'YOUR_ACTUAL_APP_ID', // Replace with your Facebook App ID
             cookie: true,
             xfbml: true,
-            version: 'v22.0'
+            version: 'v18.0'
         });
         
         // Check initial login status
@@ -137,16 +137,4 @@ function handleSuccessfulLogin(response) {
             showError('Failed to get user information');
         }
     });
-}
-
-// Function to handle manual login with error handling
-function handleLogin() {
-    if (typeof FB === 'undefined') {
-        showError('Unable to connect to Facebook. Please try refreshing the page.');
-        return;
-    }
-
-    FB.login(function(response) {
-        statusChangeCallback(response);
-    }, {scope: 'public_profile,email'});
 }
