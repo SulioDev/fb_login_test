@@ -88,6 +88,7 @@ function showError(message) {
 
 // Handle the login status change with error handling
 function statusChangeCallback(response) {
+    console.log('Status Change Response:', response);
     try {
         if (response.status === 'connected') {
             console.log('Successfully logged in with Facebook');
@@ -120,7 +121,10 @@ function checkLoginState() {
 
 // Handle successful login
 function handleSuccessfulLogin(response) {
-    FB.api('/me', function(response) {
+  console.log("Successful Login Response:", response);
+    FB.api('/me?fields=id,name', function(response) {
+    // FB.api('/me', function(response) {
+        console.log("API Response", response);
         if (response && !response.error) {
             console.log('Successful login for: ' + response.name);
             // Hide any error messages
@@ -129,7 +133,7 @@ function handleSuccessfulLogin(response) {
                 errorContainer.style.display = 'none';
             }
         } else {
-            console.error('Error getting user info:', response.error);
+             console.error('Error getting user info:', response);
             showError('Failed to get user information');
         }
     });
