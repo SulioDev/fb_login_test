@@ -5,7 +5,7 @@ window.fbAsyncInit = function() {
             appId: '1075064627580974', // Replace with your Facebook App ID
             cookie: true,
             xfbml: true,
-            version: 'v18.0'
+            version: 'v22.0'
         });
         
         // Check initial login status
