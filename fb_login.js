@@ -2,7 +2,7 @@
 window.fbAsyncInit = function() {
     try {
         FB.init({
-            appId: '1671827080068837', // Replace with your Facebook App ID
+            appId: '998425182309162', // Replace with your Facebook App ID
             cookie: true,
             xfbml: true,
             version: 'v22.0'
